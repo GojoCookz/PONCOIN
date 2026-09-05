@@ -25,6 +25,9 @@
   </head>
 
   <body>
+    <div class="pointer-glow" aria-hidden="true"></div>
+    <div class="pointer-dot" aria-hidden="true"></div>
+
     <!-- ==================== NAV ==================== -->
     <nav class="nav">
       <a class="nav__brand" href="#top">
@@ -71,21 +74,22 @@
             <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 9h10v10H9zM5 15V5h10"/></svg>
           </button>
         </div>
+
+        <aside class="hero__pipa">
+          <a class="hero__pipa-mark" id="hero-pipa-site" href="#" target="_blank" rel="noopener noreferrer">
+            <img src="img/pipa-logo.png" alt="PON International Preservation Alliance" />
+          </a>
+          <div class="hero__pipa-copy">
+            <span class="hero__pipa-label">Where it goes</span>
+            <strong>PIPA protects the PON gene pool.</strong>
+            <span>Registered 501(c)(3) · EIN 39-3160948</span>
+          </div>
+          <a class="btn btn--go btn--sm" id="hero-donate" href="#" target="_blank" rel="noopener noreferrer">Donate direct</a>
+        </aside>
       </div>
     </header>
 
     <main>
-      <!-- ==================== NUMBERS ==================== -->
-      <section class="sec sec--tight">
-        <div class="wrap">
-          <div class="grid grid--3 rev rev-1">
-            <div class="card"><span class="stat__n stat__n--green">150</span><span class="stat__l">left alive in 1945</span></div>
-            <div class="card"><span class="stat__n">1</span><span class="stat__l">sire rebuilt the whole breed</span></div>
-            <div class="card"><span class="stat__n">#192</span><span class="stat__l">AKC rank of 202 — rare, not endangered</span></div>
-          </div>
-        </div>
-      </section>
-
       <!-- ==================== THE WAR ==================== -->
       <section class="sec" id="story">
         <div class="wrap">
@@ -147,36 +151,10 @@
         </div>
       </section>
 
-      <!-- ==================== PIPA ==================== -->
-      <section class="sec">
-        <div class="wrap split">
-          <figure class="media rev media--tall">
-            <img src="img/pipa-logo.png" alt="PON International Preservation Alliance logo." loading="lazy" />
-          </figure>
-          <div>
-            <p class="eyebrow rev">05 — Where it goes</p>
-            <h2 class="h2 rev rev-1"><span class="h2__a">A real charity is</span><span class="h2__b">fixing the DNA.</span></h2>
-            <p class="body rev rev-2">
-              The <strong>PON International Preservation Alliance</strong> maps PON DNA
-              with the Orthopedic Foundation for Animals, so breeders can widen the gene
-              pool instead of narrowing it. Registered 501(c)(3), EIN 39-3160948.
-            </p>
-            <div class="hero__cta rev rev-3">
-              <a class="btn btn--go" id="donate" href="#" target="_blank" rel="noopener noreferrer">Donate to PIPA</a>
-              <a class="btn btn--ghost" id="pipa-site" href="#" target="_blank" rel="noopener noreferrer">ponipa.org</a>
-            </div>
-            <p class="tiny">
-              Logo used with the alliance's knowledge while they review this page.
-              PIPA is a separate organisation and has not endorsed $PONCOIN.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <!-- ==================== RECEIPTS ==================== -->
       <section class="sec">
         <div class="wrap">
-          <p class="eyebrow rev">06 — The receipts</p>
+          <p class="eyebrow rev">05 — The receipts</p>
           <h2 class="h2 rev rev-1"><span class="h2__a">Every donation,</span><span class="h2__b">photographed.</span></h2>
           <p class="body rev rev-2">No promises and no percentages. It counts when there is a receipt you can open.</p>
           <div id="ledger" class="rev rev-2"></div>

@@ -23,8 +23,8 @@
     const a = $(id)
     if (a && D.TOKEN.x) a.href = D.TOKEN.x
   })
-  $('donate').href = D.BENEFICIARY.donate
-  $('pipa-site').href = D.BENEFICIARY.site
+  $('hero-donate').href = D.BENEFICIARY.donate
+  $('hero-pipa-site').href = D.BENEFICIARY.site
   $('foot-scan').href = D.TOKEN.explorer
 
   /* ---- contract ------------------------------------------------------- */
@@ -144,5 +144,66 @@
       { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
     )
     items.forEach(function (n) { io.observe(n) })
+  })()
+
+  /* ---- pointer play ----------------------------------------------------- */
+
+  ;(function pointerPlay() {
+    const fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!fine || reduced) return
+
+    const glow = document.querySelector('.pointer-glow')
+    const dot = document.querySelector('.pointer-dot')
+    let mouseX = window.innerWidth / 2
+    let mouseY = window.innerHeight / 2
+    let glowX = mouseX
+    let glowY = mouseY
+    let lastPawX = mouseX
+    let lastPawY = mouseY
+
+    document.addEventListener('pointermove', function (event) {
+      mouseX = event.clientX
+      mouseY = event.clientY
+      document.body.classList.add('pointer-on')
+      dot.style.transform = 'translate(' + mouseX + 'px,' + mouseY + 'px) translate(-50%,-50%)'
+
+      if (Math.hypot(mouseX - lastPawX, mouseY - lastPawY) < 54) return
+      lastPawX = mouseX
+      lastPawY = mouseY
+      const paw = el('span', 'pointer-paw')
+      paw.style.left = mouseX - 7 + 'px'
+      paw.style.top = mouseY - 7 + 'px'
+      document.body.appendChild(paw)
+      const drift = Math.random() * 18 - 9
+      paw.animate(
+        [
+          { opacity: .38, transform: 'translateY(0) rotate(' + drift + 'deg) scale(.7)' },
+          { opacity: 0, transform: 'translateY(-20px) rotate(' + drift * 2 + 'deg) scale(1.15)' },
+        ],
+        { duration: 720, easing: 'cubic-bezier(.23,1,.32,1)' },
+      ).finished.then(function () { paw.remove() })
+    }, { passive: true })
+
+    document.addEventListener('pointerleave', function () {
+      document.body.classList.remove('pointer-on')
+    })
+
+    document.querySelectorAll('.btn').forEach(function (button) {
+      button.addEventListener('pointermove', function (event) {
+        const box = button.getBoundingClientRect()
+        const x = (event.clientX - box.left - box.width / 2) * .12
+        const y = (event.clientY - box.top - box.height / 2) * .12
+        button.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+      })
+      button.addEventListener('pointerleave', function () { button.style.transform = '' })
+    })
+
+    ;(function follow() {
+      glowX += (mouseX - glowX) * .14
+      glowY += (mouseY - glowY) * .14
+      glow.style.transform = 'translate(' + glowX + 'px,' + glowY + 'px) translate(-50%,-50%)'
+      window.requestAnimationFrame(follow)
+    })()
   })()
 })()
