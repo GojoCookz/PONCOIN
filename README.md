@@ -30,7 +30,8 @@ cd site
 node server.mjs 4173      # http://localhost:4173
 ```
 
-`vercel.json` is included for deployment.
+The root `vercel.json` deploys `site/` directly, so the repository can be
+imported into Vercel without changing the project root directory.
 
 ## Layout
 
