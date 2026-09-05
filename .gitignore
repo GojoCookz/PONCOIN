@@ -1,0 +1,13 @@
+# Research working files — bulky and regenerable.
+# The scripts that produce them are tracked; the outputs are not.
+research/game-candidates/
+research/ref/
+research/*.png
+research/*.jpg
+research/*.jpeg
+
+# Node / editor noise
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
