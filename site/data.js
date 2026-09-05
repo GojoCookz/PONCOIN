@@ -468,8 +468,8 @@ window.PON = (function () {
     },
     {
       claim: 'A donation has been made',
-      state: 'pending',
-      detail: 'Zero so far. The ledger below proves it.',
+      state: 'confirmed',
+      detail: '$833.05 total. See receipts below.',
     },
     {
       claim: 'The token has a market',
@@ -508,14 +508,38 @@ window.PON = (function () {
      and, where the money moved on-chain, a tx hash. Nothing goes in here
      without a receipt you can open. */
   const LEDGER = [
-    // {
-    //   date: '2026-09-14',
-    //   amount: '$250',
-    //   org: 'PIPA',
-    //   note: 'Genetic diversity fund',
-    //   receipt: 'receipts/001.jpg',
-    //   tx: '',
-    // },
+    {
+      date: '2026-09-05',
+      amount: '$29.81',
+      org: 'PIPA',
+      note: 'GiveButter donation',
+      receipt: 'receipts/001-29-81.png',
+      tx: '',
+    },
+    {
+      date: '2026-09-05',
+      amount: '$118.30',
+      org: 'PIPA',
+      note: 'GiveButter donation',
+      receipt: 'receipts/002-118-30.png',
+      tx: '',
+    },
+    {
+      date: '2026-09-05',
+      amount: '$236.28',
+      org: 'PIPA',
+      note: 'GiveButter donation',
+      receipt: 'receipts/003-236-28.png',
+      tx: '',
+    },
+    {
+      date: '2026-09-05',
+      amount: '$448.66',
+      org: 'PIPA',
+      note: 'GiveButter donation',
+      receipt: 'receipts/004-448-66.png',
+      tx: '',
+    },
   ]
 
   /* ---- photo credits (mirrors assets/breed-photos/CREDITS.md) ---------- */
