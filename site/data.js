@@ -43,7 +43,7 @@ window.PON = (function () {
     },
     blockscout: {
       label: 'Robinhood Chain Blockscout \u2014 token page',
-      url: 'https://robinhoodchain.blockscout.com/token/0xdf0E757812d792d24cE39EEc04bD19519A1458EA',
+      url: 'https://robinhoodchain.blockscout.com/token/0x7CC3628D910AEcf001C299315A1d897D879eA3aB',
     },
     ucdavisPon: {
       label: 'UC Davis VGL \u2014 Genetic Diversity Testing for Polish Lowland Sheepdog',
@@ -69,29 +69,19 @@ window.PON = (function () {
 
   /* ---- the token ------------------------------------------------------- */
 
-  /* =====================================================================
-   * REDEPLOY IN PROGRESS - symbol changing PON -> PONCOIN.
-   *
-   * When the new contract is live, change ONLY the three values below.
-   * Everything on the site reads from here: buy link, explorer link,
-   * ticker, live holder/transfer counts, footer address.
-   *
-   * The OLD contract 0xdf0E757812d792d24cE39EEc04bD19519A1458EA still
-   * exists and is NOT this project. Say so publicly when you migrate.
-   * ===================================================================== */
+  /* Current deployment. The old 0xdf0E...58EA contract is retired. */
   const TOKEN = {
-    address: '0xdf0E757812d792d24cE39EEc04bD19519A1458EA', // <-- SWAP ON REDEPLOY
-    name: 'Polski Owczarek Nizinny',
+    address: '0x7CC3628D910AEcf001C299315A1d897D879eA3aB',
+    name: 'Poncoin',
     brand: 'PONCOIN',
-    symbol: 'PONCOIN',
+    symbol: 'PON',
     chain: 'Robinhood Chain',
-    pairedWith: 'ETH',
-    // Verified live: the Pons launchpad token page for this contract.
+    pairedWith: 'USDG',
     x: 'https://x.com/PoncoinHood',
     buyUrl:
-      'https://www.ponsfamily.com/launchpad/0xdf0E757812d792d24cE39EEc04bD19519A1458EA',
+      'https://www.ponsfamily.com/launchpad/0x7cc3628d910aecf001c299315a1d897d879ea3ab',
     explorer:
-      'https://robinhoodchain.blockscout.com/token/0xdf0E757812d792d24cE39EEc04bD19519A1458EA',
+      'https://robinhoodchain.blockscout.com/token/0x7CC3628D910AEcf001C299315A1d897D879eA3aB',
     apiBase: 'https://robinhoodchain.blockscout.com/api/v2',
     creatorTax: '0.00%',
   }

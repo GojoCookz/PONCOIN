@@ -3,7 +3,7 @@
 Site for $PON, a token on Robinhood Chain built around the Polish Lowland
 Sheepdog and the genetic bottleneck the breed still carries.
 
-**Contract:** `0xdf0E757812d792d24cE39EEc04bD19519A1458EA` (Robinhood Chain)
+**Contract:** `0x7CC3628D910AEcf001C299315A1d897D879eA3aB` (Robinhood Chain)
 
 ## What this is
 

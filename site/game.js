@@ -301,7 +301,8 @@
     })
     row.appendChild(share)
 
-    const buy = el('a', 'btn btn--go', 'Buy $PONCOIN')
+    const symbol = window.PON && window.PON.TOKEN ? window.PON.TOKEN.symbol : 'PON'
+    const buy = el('a', 'btn btn--go', 'Buy $' + symbol)
     buy.href = window.PON && window.PON.TOKEN ? window.PON.TOKEN.buyUrl : '#buy'
     buy.target = '_blank'
     buy.rel = 'noopener noreferrer'
