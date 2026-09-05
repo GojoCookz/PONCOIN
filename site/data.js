@@ -469,7 +469,7 @@ window.PON = (function () {
     {
       claim: 'A donation has been made',
       state: 'confirmed',
-      detail: '$833.05 total. See receipts below.',
+      detail: '$3,272.97 total. See receipts below.',
     },
     {
       claim: 'The token has a market',
@@ -538,6 +538,22 @@ window.PON = (function () {
       org: 'PIPA',
       note: 'GiveButter donation',
       receipt: 'receipts/004-448-66.png',
+      tx: '',
+    },
+    {
+      date: '2026-09-05',
+      amount: '$1,944.07',
+      org: 'PIPA',
+      note: 'GiveButter donation',
+      receipt: 'receipts/005-1944-07.png',
+      tx: '',
+    },
+    {
+      date: '2026-09-05',
+      amount: '$495.85',
+      org: 'PIPA',
+      note: 'GiveButter donation — $420 to PIPA + fees',
+      receipt: 'receipts/006-495-85.png',
       tx: '',
     },
   ]
