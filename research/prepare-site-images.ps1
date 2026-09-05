@@ -18,7 +18,12 @@ $wanted = @(
     'Argo-Jack_von_Nora_s_Nizina.JPG',
     'Polish_Lowland_Sheepdog_puppy_Bruno_by_Vetulani.JPG',
     'Polski_owczarek_nizinny_rybnik-kamien_pl.jpg',
-    'Storalvare.JPG'
+    'Storalvare.JPG',
+    'PolishLowland1.jpg',
+    'Polski_Owczarek_Nizinny_Leni.jpg',
+    'Storalvens_Dione.JPG',
+    'Oowczarek_polski_nizinny_pl.jpg',
+    'PON_BrunobyVetulani.jpg'
 )
 
 $maxWidth = 1400

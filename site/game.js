@@ -96,9 +96,9 @@
   function renderIntro() {
     root.innerHTML = ''
     const box = el('div', 'game__intro')
-    box.appendChild(el('p', 'game__kicker', 'Five rounds · about 20 seconds'))
+    box.appendChild(el('p', 'tiny', 'Five rounds · about 20 seconds'))
     box.appendChild(
-      el('h3', 'game__title', 'Can you pick the Polish Lowland Sheepdog?'),
+      el('p', 'h2__a', 'Can you pick the Polish Lowland Sheepdog?'),
     )
     box.appendChild(
       el(
@@ -108,7 +108,7 @@
           + 'harder as you go.',
       ),
     )
-    const btn = el('button', 'btn btn--buy btn--lg', 'Start')
+    const btn = el('button', 'btn btn--go', 'Start')
     btn.type = 'button'
     btn.addEventListener('click', function () {
       round = 0
@@ -139,10 +139,10 @@
 
     // progress
     const head = el('div', 'game__head')
-    head.appendChild(el('p', 'game__kicker', 'Round ' + (round + 1) + ' of ' + ROUNDS.length))
-    const bar = el('div', 'game__bar')
+    head.appendChild(el('p', 'tiny', 'Round ' + (round + 1) + ' of ' + ROUNDS.length))
+    const bar = el('div', 'gbar')
     for (let i = 0; i < ROUNDS.length; i++) {
-      const seg = el('span', 'game__seg' + (i < round ? ' is-done' : i === round ? ' is-now' : ''))
+      const seg = el('span', 'gseg' + (i < round ? ' done' : i === round ? ' now' : ''))
       bar.appendChild(seg)
     }
     head.appendChild(bar)
@@ -150,9 +150,9 @@
 
     root.appendChild(el('h3', 'game__prompt', 'Which one is the PON?'))
 
-    const grid = el('div', 'game__grid')
+    const grid = el('div', 'gtiles')
     tiles.forEach(function (p) {
-      const btn = el('button', 'tile')
+      const btn = el('button', 'gtile')
       btn.type = 'button'
       btn.setAttribute('aria-label', 'Dog photo — tap if you think this is the Polish Lowland Sheepdog')
 
@@ -163,7 +163,7 @@
       img.decoding = 'async'
       btn.appendChild(img)
 
-      const badge = el('span', 'tile__badge')
+      const badge = el('span', 'gtile__badge')
       btn.appendChild(badge)
 
       btn.addEventListener('click', function () {
@@ -173,7 +173,7 @@
     })
     root.appendChild(grid)
 
-    const cred = el('p', 'game__credits')
+    const cred = el('p', 'tiny')
     cred.innerHTML = 'Photos: ' + tiles.map(credit).join(' · ')
     root.appendChild(cred)
   }
@@ -193,16 +193,16 @@
       const img = t.querySelector('img')
       const isAnswer = img.src.indexOf(answer.file) !== -1
       if (isAnswer) {
-        t.classList.add('is-answer')
-        t.querySelector('.tile__badge').textContent = 'PON'
+        t.classList.add('right')
+        t.querySelector('.gtile__badge').textContent = 'PON'
       } else {
-        t.classList.add('is-dim')
+        t.classList.add('off')
       }
     })
     if (!right) {
-      btn.classList.remove('is-dim')
-      btn.classList.add('is-wrong')
-      btn.querySelector('.tile__badge').textContent = cfg.name
+      btn.classList.remove('off')
+      btn.classList.add('wrong')
+      btn.querySelector('.gtile__badge').textContent = cfg.name
     }
 
     const fb = el('div', 'game__feedback' + (right ? ' is-right' : ''))
@@ -213,9 +213,9 @@
         right ? 'Correct.' : 'That was ' + (cfg.article || 'a') + ' ' + cfg.name + '.',
       ),
     )
-    fb.appendChild(el('p', 'game__note', cfg.note))
+    fb.appendChild(el('p', 'body', cfg.note))
 
-    const next = el('button', 'btn btn--buy', round === ROUNDS.length - 1 ? 'See result' : 'Next round')
+    const next = el('button', 'btn btn--go', round === ROUNDS.length - 1 ? 'See result' : 'Next round')
     next.type = 'button'
     next.addEventListener('click', function () {
       round++
@@ -233,7 +233,7 @@
     root.innerHTML = ''
     const box = el('div', 'game__result')
 
-    box.appendChild(el('p', 'game__kicker', 'Result'))
+    box.appendChild(el('p', 'tiny', 'Result'))
     const s = el('p', 'game__score')
     s.innerHTML = '<strong>' + score + '</strong> / ' + ROUNDS.length
     box.appendChild(s)
@@ -301,7 +301,7 @@
     })
     row.appendChild(share)
 
-    const buy = el('a', 'btn btn--buy', 'Buy $PON')
+    const buy = el('a', 'btn btn--go', 'Buy $PONCOIN')
     buy.href = window.PON && window.PON.TOKEN ? window.PON.TOKEN.buyUrl : '#buy'
     buy.target = '_blank'
     buy.rel = 'noopener noreferrer'

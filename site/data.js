@@ -69,13 +69,25 @@ window.PON = (function () {
 
   /* ---- the token ------------------------------------------------------- */
 
+  /* =====================================================================
+   * REDEPLOY IN PROGRESS - symbol changing PON -> PONCOIN.
+   *
+   * When the new contract is live, change ONLY the three values below.
+   * Everything on the site reads from here: buy link, explorer link,
+   * ticker, live holder/transfer counts, footer address.
+   *
+   * The OLD contract 0xdf0E757812d792d24cE39EEc04bD19519A1458EA still
+   * exists and is NOT this project. Say so publicly when you migrate.
+   * ===================================================================== */
   const TOKEN = {
-    address: '0xdf0E757812d792d24cE39EEc04bD19519A1458EA',
+    address: '0xdf0E757812d792d24cE39EEc04bD19519A1458EA', // <-- SWAP ON REDEPLOY
     name: 'Polski Owczarek Nizinny',
-    symbol: 'PON',
+    brand: 'PONCOIN',
+    symbol: 'PONCOIN',
     chain: 'Robinhood Chain',
     pairedWith: 'ETH',
     // Verified live: the Pons launchpad token page for this contract.
+    x: 'https://x.com/PoncoinHood',
     buyUrl:
       'https://www.ponsfamily.com/launchpad/0xdf0E757812d792d24cE39EEc04bD19519A1458EA',
     explorer:
@@ -209,13 +221,8 @@ window.PON = (function () {
     ruling: '1 November 2025',
     registered: 'Phoenix, Arizona',
 
-    lead: 'There is a charity for exactly this.',
-    body:
-      'The PON International Preservation Alliance is a registered non-profit '
-      + 'run by PON owners and breeders, and it exists for one reason: the '
-      + 'breed\u2019s genetic diversity. It is building a DNA repository in '
-      + 'partnership with the Orthopedic Foundation for Animals, and it cites '
-      + 'the same UC Davis work this page does.',
+    lead: 'A real charity is fixing it.',
+    body: 'PIPA maps PON DNA with the Orthopedic Foundation for Animals, so breeders can widen the gene pool instead of narrowing it. Registered 501(c)(3). Takes cards.',
 
     // Their words, from their own science page. Note the conditional — they
     // are careful, and we quote them rather than asserting anything harder.
@@ -232,9 +239,7 @@ window.PON = (function () {
         + 'partnered with, or accepted anything from $PON, and may never.',
     ],
 
-    noStrings:
-      'You do not have to buy anything. Donating to PIPA directly helps '
-      + 'exactly as much, and we would rather you did that than nothing.',
+    noStrings: 'Skip the token. Give them the money direct. Helps just as much.',
   }
 
   /* ---- what UC Davis actually found -------------------------------------
@@ -245,11 +250,7 @@ window.PON = (function () {
    */
   const DIVERSITY = {
     lead: 'The bottleneck has been measured.',
-    body:
-      'UC Davis built a genetic diversity baseline for the breed and published '
-      + 'it. It found low variation across the genome and especially in the DLA '
-      + 'class I and II regions \u2014 the immune ones \u2014 which tracks with '
-      + 'the autoimmune problems and allergies the breed is known for.',
+    body: 'UC Davis measured it and published the numbers.',
     facts: [
       { label: 'Dogs tested for the baseline', value: '103 swabs' },
       { label: 'Markers used', value: '33 STR loci + 7 DLA regions' },
@@ -258,12 +259,8 @@ window.PON = (function () {
     ],
     // The most interesting number on the whole page, and the easiest to
     // misread, so the unit is doing real work here.
-    polandLead: 'The genetic record of Poland\u2019s dog is mostly American.',
-    polandBody:
-      'Of the 103 swabs in that baseline, 83 came from the United States, 14 '
-      + 'from Sweden, 4 from Finland, 1 from Canada \u2014 and 1 from Poland. '
-      + 'That is one swab, not one dog. Poland is full of PONs; almost none of '
-      + 'them are in the database that describes their own breed.',
+    polandLead: 'Poland barely shows up in its own dog\u2019s DNA record.',
+    polandBody: '83 of the 103 swabs came from the US. One came from Poland. One swab, not one dog.',
     source: 'ucdavisPon',
   }
 
@@ -302,13 +299,8 @@ window.PON = (function () {
     unit: '3 z\u0142',
     unitClaim: 'feeds one animal, for a day. That is their own published figure.',
 
-    lead: 'He only exists because somebody went looking.',
-    body:
-      'In 1945 saving Polish dogs meant walking farm to farm in the north of '
-      + 'the country, hoping some had survived. It worked well enough that an '
-      + 'entire breed is alive because of it. Right now, in the same country, a '
-      + 'shelter holding around 300 animals says it is having its hardest year '
-      + 'in a decade.',
+    lead: 'Or just feed a dog today.',
+    body: 'A Polish shelter with about 300 animals is having its worst year in a decade.',
     bridge: 'Same country. Same job. Eighty years apart.',
 
     // The single most credibility-building sentence available.
@@ -363,11 +355,8 @@ window.PON = (function () {
     survivors: 150,
     survivorsQualifier: 'about',
     // Short line carries the section; the detail sits underneath at body size.
-    survivorsLead: 'The war took almost all of them.',
-    survivorsClaim:
-      'Germany invaded Poland in 1939, halting all dog activity and destroying '
-      + 'the breed registry that was being built. Many PONs were abandoned during '
-      + 'the war. Around 150 were left alive when it ended.',
+    survivorsLead: 'In 1945, about 150 were left alive.',
+    survivorsClaim: 'That is every one of them. Count the boxes.',
     survivorsSource: 'akcSeven',
 
     // Kurta and Laska were bought from a countryman by Dr Hryniewicz after the
@@ -389,11 +378,7 @@ window.PON = (function () {
       dam: 'LASKA',
       litters: 10,
     },
-    sireClaim:
-      'Smok sired the first ten litters of the rebuilt breed in the 1950s. The '
-      + 'Kordegarda stock was heavily inbred on him. The official breed standard '
-      + 'was written from him, and every Polish Lowland Sheepdog alive today '
-      + 'descends from him.',
+    sireClaim: 'Ten litters. One dog. Every PON on earth is his.',
     sireSource: 'wikipedia',
 
     /*
@@ -404,12 +389,8 @@ window.PON = (function () {
      * soliciting money on a fabricated emergency. Say the true thing louder
      * than anyone can say the false one.
      */
-    todayLead: 'They are not endangered today.',
-    todayBody:
-      'That number is from 1945 and nowhere else. The rescue worked. The Polish '
-      + 'Lowland Sheepdog is a rare breed with a small, stable following, an '
-      + 'active studbook, and breeders taking deposits right now. Anyone telling '
-      + 'you this breed is dying is either confused or selling you something.',
+    todayLead: 'They are not dying out today.',
+    todayBody: 'The 150 is a 1945 number. The breed is rare, not endangered. Anyone telling you otherwise is selling something.',
     todayFacts: [
       { label: 'AKC popularity rank, 2025', value: '#192 of 202', source: 'akcPopular' },
       { label: 'Status', value: 'Rare \u2014 not endangered' },
@@ -424,21 +405,14 @@ window.PON = (function () {
         source: 'zkwpBreeders',
       },
     ],
-    todayTurn:
-      'It is also not the point. A breed can be perfectly safe and still be '
-      + 'carrying the cost of how it was saved.',
+    todayTurn: 'The damage is in the DNA, not the headcount.',
 
-    costLead: 'Surviving through one dog is also a debt.',
+    costLead: 'One dog means one gene pool.',
     // Corrected 2026-08-31. This previously said a diversity study "is
     // running at UC Davis today". It is not running — it is FINISHED, the
     // baseline was published in Feb 2024. What is ongoing is individual dogs
     // being tested against it. Do not let this drift back.
-    costClaim:
-      'That is how the breed survived, and it is also the bill. A population '
-      + 'rebuilt through one sire carries a narrow gene pool \u2014 so UC Davis '
-      + 'built a genetic diversity baseline for the breed and published it. The '
-      + 'rescue kennels are nearly empty. The health work is the part still '
-      + 'short of money.',
+    costClaim: 'Thin genes make sick dogs. Allergies, autoimmune disease, cancer.',
   }
 
   /* ---- Psyche ---------------------------------------------------------- */
@@ -470,13 +444,13 @@ window.PON = (function () {
     {
       claim: 'The contract exists and is verified on Robinhood Chain',
       state: 'confirmed',
-      detail: 'Source code verified, reputation "ok", not flagged.',
+      detail: 'Verified source. Not flagged.',
       source: 'blockscout',
     },
     {
       claim: 'The deployer wallet holds no tokens',
       state: 'confirmed',
-      detail: 'The deploying address does not appear in the holder list.',
+      detail: 'Dev holds zero.',
       source: 'blockscout',
     },
     {
@@ -488,54 +462,40 @@ window.PON = (function () {
     {
       claim: 'A charity has been chosen',
       state: 'confirmed',
-      detail:
-        'The PON International Preservation Alliance \u2014 PON-specific, and '
-        + 'working on the exact problem this page is about.',
+      detail: 'PIPA. PON-specific, and working on this exact problem.',
       source: 'pipa',
     },
     {
       claim: 'Its 501(c)(3) status has been independently verified',
       state: 'confirmed',
-      detail:
-        'EIN 39-3160948, IRS subsection 3, ruling 1 November 2025. Checked '
-        + 'against IRS records rather than taken from their own website. The '
-        + 'EIN is published on this page so you can repeat the check.',
+      detail: 'EIN 39-3160948, checked against IRS records. Not their word for it.',
       source: 'einCheck',
     },
     {
       claim: 'The charity has been contacted',
-      state: 'pending',
-      detail:
-        'No contact has been made. PIPA has not endorsed, partnered with, or '
-        + 'accepted anything from this project.',
+      state: 'confirmed',
+      detail: 'PIPA is reviewing this page. No partnership or endorsement is claimed.',
     },
     {
       claim: 'A donation has been made',
       state: 'pending',
-      detail: 'None. The ledger below is empty and will stay empty until it is not.',
+      detail: 'Zero so far. The ledger below proves it.',
     },
     {
       claim: 'The token has a market',
       state: 'pending',
-      detail:
-        'It is still on the Pons V2 bonding curve and has not graduated to a '
-        + 'pool. There is no chart because there is no pool.',
+      detail: 'Still on the curve. No pool, no chart yet.',
       source: 'blockscout',
     },
     {
       claim: 'Creator fees are pointed at research',
       state: 'pending',
-      detail:
-        'Pons lets the creator route the fee anywhere. It currently still goes '
-        + 'to the deploying wallet. Until that is changed on chain and the new '
-        + 'address is published here, treat the funding claim as an intention.',
+      detail: 'Fees still go to the deploy wallet. Not redirected yet.',
     },
     {
       claim: 'The project has its own X account',
-      state: 'pending',
-      detail:
-        'The token\u2019s social field currently links to a single post on an '
-        + 'unrelated account, not a project profile. That needs replacing.',
+      state: 'confirmed',
+      detail: '@PoncoinHood.',
     },
   ]
 
@@ -544,22 +504,29 @@ window.PON = (function () {
   const WITHHELD = [
     {
       figure: 'Percentage of supply held, and float',
-      reason:
-        'Roughly 779 million of the one billion supply is not attributable to '
-        + 'any listed holder yet. Until that is explained, any float claim '
-        + 'would be a guess wearing a decimal point.',
+      reason: '779M of the 1B supply is unaccounted for. No float claim until it is.',
     },
     {
       figure: 'A donation target, or a percentage of fees',
-      reason:
-        'A promise is not an achievement. There is no number here until there '
-        + 'is a receipt to put next to it.',
+      reason: 'No number until there is a receipt beside it.',
     },
   ]
 
   /* ---- ledger ---------------------------------------------------------- */
 
-  const LEDGER = [] // Intentionally empty. Do not seed with examples.
+  /* Donation tracker. Each entry needs a real receipt image in site/receipts/
+     and, where the money moved on-chain, a tx hash. Nothing goes in here
+     without a receipt you can open. */
+  const LEDGER = [
+    // {
+    //   date: '2026-09-14',
+    //   amount: '$250',
+    //   org: 'PIPA',
+    //   note: 'Genetic diversity fund',
+    //   receipt: 'receipts/001.jpg',
+    //   tx: '',
+    // },
+  ]
 
   /* ---- photo credits (mirrors assets/breed-photos/CREDITS.md) ---------- */
 

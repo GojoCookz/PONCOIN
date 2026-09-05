@@ -1,363 +1,210 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="js">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>$PON — 150 left</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>$PONCOIN — Saving PONs on Pons</title>
     <meta
       name="description"
-      content="About 150 Polish Lowland Sheepdogs were alive when the Second World War ended. Every one alive today came from two of them. $PON funds the health research that cost."
+      content="A charity token to save and preserve PON dogs through genetic research and responsible breeding. On Robinhood Chain."
     />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23000000'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%2300C805'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23ffffff'/%3E%3Ccircle cx='8' cy='8' r='5' fill='%2300C805'/%3E%3C/svg%3E"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="img/Argo-Jack_von_Nora_s_Nizina.jpg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="app.css" />
   </head>
 
   <body>
-    <a class="skip-link" href="#count">Skip to the record</a>
-
-    <!-- ==================== STICKY BAR ==================== -->
-    <div class="bar" id="bar">
-      <div class="bar__inner">
-        <a class="bar__mark" href="#top">
-          <span class="bar__chip" aria-hidden="true"></span>
-          <span class="bar__name">$PON</span>
-          <span class="bar__sub">Polski Owczarek Nizinny</span>
+    <!-- ==================== NAV ==================== -->
+    <nav class="nav">
+      <a class="nav__brand" href="#top">
+        <img class="nav__logo" src="img/pipa-logo.png" alt="" />
+        PONCOIN
+      </a>
+      <div class="nav__right">
+        <a class="icon-btn" id="nav-x" href="#" target="_blank" rel="noopener noreferrer" aria-label="PONCOIN on X">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-7.1 8.1L23.2 22h-6.6l-5.2-6.8L5.5 22H2.4l7.6-8.7L1.2 2h6.8l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
         </a>
-        <a class="btn btn--buy" id="bar-buy" href="#" target="_blank" rel="noopener noreferrer">
-          Buy $PON
-        </a>
+        <a class="btn btn--go btn--sm" id="nav-buy" href="#" target="_blank" rel="noopener noreferrer">Buy $PONCOIN</a>
       </div>
-    </div>
+    </nav>
 
     <!-- ==================== HERO ==================== -->
     <header class="hero" id="top">
-      <img
-        class="hero__img"
-        src="img/Argo-Jack_von_Nora_s_Nizina.jpg"
-        alt="A Polish Lowland Sheepdog running across open grass towards the camera."
-        fetchpriority="high"
-      />
-      <div class="hero__scrim"></div>
+      <img class="hero__bg" src="img/Argo-Jack_von_Nora_s_Nizina.jpg" alt="A Polish Lowland Sheepdog running through a field." fetchpriority="high" />
+      <div class="hero__veil"></div>
 
-      <div class="hero__inner">
-        <p class="hero__tag">
-          <span>Polski Owczarek Nizinny</span>
-          <span>FCI standard N&deg;&nbsp;251</span>
-        </p>
+      <div class="wrap">
+        <p class="badge"><i></i> Charity coin on Robinhood Chain</p>
 
-        <h1 class="hero__title">
-          <span class="hero__title-sm">In 1945 there were</span>
-          <span class="hero__title-lg">about <em>150</em> left.</span>
+        <h1 class="h1">
+          <span class="h1__a">Saving PONs</span>
+          <span class="h1__b">on Pons.</span>
         </h1>
 
-        <p class="hero__sub">
-          Every Polish Lowland Sheepdog alive today came from two of them.
-          That rescue worked — and it left a bill nobody has finished paying.
+        <p class="lede">
+          A charity token to save and preserve PON dogs through
+          <strong>genetic research</strong> and responsible breeding. One of the
+          rarest breeds on earth, rebuilt from ten litters of a single dog — and
+          still carrying the cost of it.
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--buy btn--lg" id="hero-buy" href="#" target="_blank" rel="noopener noreferrer">
-            Buy $PON
-          </a>
-          <a class="btn btn--ghost btn--lg" href="#count">See what 150 looks like</a>
+          <a class="btn btn--go" id="hero-buy" href="#" target="_blank" rel="noopener noreferrer">Buy $PONCOIN</a>
+          <a class="btn btn--ghost" href="#story">See the story</a>
+        </div>
+
+        <div class="ca">
+          <b>CA</b>
+          <span id="ca-text"></span>
+          <button type="button" id="ca-copy" aria-label="Copy contract address">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 9h10v10H9zM5 15V5h10"/></svg>
+          </button>
         </div>
       </div>
-
-      <p class="hero__credit">
-        Photo: Nizina ·
-        <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>
-      </p>
     </header>
 
     <main>
-      <!-- ==================== 01 THE 150 ==================== -->
-      <section class="beat beat--night" id="count">
+      <!-- ==================== NUMBERS ==================== -->
+      <section class="sec sec--tight">
         <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">01</span> Population</h2>
-
-          <figure class="bottleneck">
-            <div
-              class="marks"
-              id="marks"
-              role="img"
-              aria-label="A grid of 150 marks, two of them filled red, representing the roughly 150 Polish Lowland Sheepdogs alive at the end of the Second World War."
-            ></div>
-            <figcaption class="marks__cap">
-              <span class="swatch" aria-hidden="true"></span>
-              Kurta and Laska — the two this all came from
-            </figcaption>
-          </figure>
-
-          <p class="statement" id="survivors-lead"></p>
-          <p class="body body--wide" id="survivors-claim"></p>
-          <p class="source" id="survivors-source"></p>
+          <div class="grid grid--3 rev rev-1">
+            <div class="card"><span class="stat__n stat__n--green">150</span><span class="stat__l">left alive in 1945</span></div>
+            <div class="card"><span class="stat__n">1</span><span class="stat__l">sire rebuilt the whole breed</span></div>
+            <div class="card"><span class="stat__n">#192</span><span class="stat__l">AKC rank of 202 — rare, not endangered</span></div>
+          </div>
         </div>
       </section>
 
-      <!-- ==================== 02 SMOK ==================== -->
-      <section class="beat beat--light" id="smok">
+      <!-- ==================== THE WAR ==================== -->
+      <section class="sec" id="story">
+        <div class="wrap">
+          <p class="eyebrow rev">01 — The war</p>
+          <h2 class="h2 rev rev-1"><span class="h2__a">In 1945, about</span><span class="h2__b">150 were left.</span></h2>
+          <p class="body rev rev-2">
+            Germany invaded in 1939 and the breed registry died with it. Every square
+            below is one surviving Polish Lowland Sheepdog. <strong>Two are marked</strong> —
+            Kurta and Laska, the pair a vet found on a farm in the north.
+          </p>
+          <div class="dots rev rev-3" id="dots" role="img" aria-label="150 marks, two highlighted"></div>
+        </div>
+      </section>
+
+      <!-- ==================== SMOK ==================== -->
+      <section class="sec">
         <div class="wrap split">
-          <div class="split__text">
-            <h2 class="eyebrow"><span class="eyebrow__no">02</span> One sire</h2>
-            <p class="statement statement--sm">
-              A vet went looking for survivors on farms. She found two. Every PON
-              on earth descends from their son.
-            </p>
-            <div class="sire-card" id="sire-card"></div>
-            <p class="body" id="sire-claim"></p>
-            <p class="source" id="sire-source"></p>
-          </div>
-
-          <figure class="split__fig">
-            <img
-              src="img/Polish_Lowland_Sheepdog_puppy_Bruno_by_Vetulani.jpg"
-              alt="A black and white Polish Lowland Sheepdog puppy standing in long grass."
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              Franek Vetulani ·
-              <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
-            </figcaption>
+          <figure class="media rev media--tall">
+            <img src="img/Polski_owczarek_nizinny_rybnik-kamien_pl.jpg" alt="A Polish Lowland Sheepdog standing among autumn leaves." loading="lazy" />
           </figure>
-        </div>
-      </section>
-
-      <!-- ==================== 03 THE BILL ==================== -->
-      <section class="beat beat--night beat--tight" id="bill">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">03</span> Where they stand now</h2>
-
-          <p class="statement" id="today-lead"></p>
-          <p class="body body--wide" id="today-body"></p>
-          <dl class="facts" id="today-facts"></dl>
-          <p class="turn" id="today-turn"></p>
-
-          <h3 class="sub-head">And the part that is still owed</h3>
-          <p class="statement statement--sm" id="cost-lead"></p>
-          <p class="body body--wide" id="cost-claim"></p>
-          <p class="kicker">
-            The rescue kennels are empty because the rescue worked.
-            <em>The bill that came due is genetic.</em>
-          </p>
-
-          <h3 class="sub-head">What the measurement found</h3>
-          <p class="body body--wide" id="dv-body"></p>
-          <dl class="facts" id="dv-facts"></dl>
-          <p class="statement statement--sm" id="dv-poland-lead"></p>
-          <p class="body body--wide" id="dv-poland-body"></p>
-          <p class="source" id="dv-source"></p>
-
-          <p class="rally" id="rally"></p>
-        </div>
-      </section>
-
-      <!-- ==================== 04 GAME ==================== -->
-      <section class="beat beat--night" id="game">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">04</span> Spot the PON</h2>
-          <div class="game" id="game-root"></div>
-        </div>
-      </section>
-
-      <!-- ==================== 05 KORABIEWICE ==================== -->
-      <section class="beat beat--light" id="shelter">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">05</span> Who this funds</h2>
-
-          <p class="statement" id="bf-lead"></p>
-          <p class="body body--wide" id="bf-body"></p>
-
-          <div class="bene">
-            <p class="bene__name" id="bf-name"></p>
-            <blockquote class="bene__quote" id="bf-quote"></blockquote>
-
-            <dl class="facts" id="bf-facts"></dl>
-
-            <div class="bene__cta">
-              <a class="btn btn--dark btn--lg" id="bf-donate" href="#" target="_blank" rel="noopener noreferrer">
-                Donate to PIPA
-              </a>
-              <a class="btn btn--outline" id="bf-site" href="#" target="_blank" rel="noopener noreferrer">
-                ponipa.org
-              </a>
-            </div>
-
-            <p class="bene__nostrings" id="bf-nostrings"></p>
-            <ul class="bene__caveats" id="bf-caveats"></ul>
+          <div>
+            <p class="eyebrow rev">02 — One sire</p>
+            <h2 class="h2 rev rev-1"><span class="h2__a">Ten litters.</span><span class="h2__b">One dog.</span></h2>
+            <p class="body rev rev-2">
+              Their son was called <strong>Smok</strong> — Dragon. He sired the first ten
+              litters of the rebuilt breed and the standard was written from his body.
+              Every PON alive today descends from him.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <h3 class="sub-head">Or just help a dog today</h3>
-          <p class="body" id="sh-lead"></p>
-          <p class="body body--wide" id="sh-body"></p>
-          <p class="kicker"><em id="sh-bridge"></em></p>
-
-          <div class="shelter">
-            <div class="shelter__head">
-              <p class="shelter__name" id="sh-name"></p>
-              <p class="shelter__quote" id="sh-quote"></p>
-            </div>
-
-            <div class="shelter__bar" role="img" id="sh-bar-wrap">
-              <span class="shelter__fill" id="sh-fill"></span>
-            </div>
-            <p class="shelter__nums" id="sh-nums"></p>
-
-            <p class="shelter__unit" id="sh-unit"></p>
-
-            <div class="shelter__cta">
-              <a class="btn btn--dark btn--lg" id="sh-donate" href="#" target="_blank" rel="noopener noreferrer">
-                Donate to Korabiewice
-              </a>
-              <a class="btn btn--outline" id="sh-feed" href="#" target="_blank" rel="noopener noreferrer">
-                Feed one for 3 z&#322;
-              </a>
-            </div>
-
-            <p class="shelter__nostrings" id="sh-nostrings"></p>
+      <!-- ==================== THE DEBT ==================== -->
+      <section class="sec">
+        <div class="wrap split split--rev">
+          <figure class="media rev">
+            <img src="img/Storalvare.jpg" alt="Five Polish Lowland Sheepdogs sitting in a row." loading="lazy" />
+          </figure>
+          <div>
+            <p class="eyebrow rev">03 — The debt</p>
+            <h2 class="h2 rev rev-1"><span class="h2__a">One dog means</span><span class="h2__b">one gene pool.</span></h2>
+            <p class="body rev rev-2">
+              Thin genes make sick dogs — allergies, autoimmune disease, cancer.
+              UC Davis measured it: low diversity right across the genome, worst in
+              the immune regions. <strong>They are not dying out today.</strong>
+              The damage is in the DNA, not the headcount.
+            </p>
           </div>
-
-          <p class="caveat" id="sh-disclaimer"></p>
         </div>
       </section>
 
-      <!-- ==================== 06 PSYCHE ==================== -->
-      <section class="beat beat--green" id="psyche">
+      <!-- ==================== GAME ==================== -->
+      <section class="sec">
         <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">06</span> Psyche</h2>
-          <p class="pull" id="psyche-claim"></p>
-          <p class="source" id="psyche-source"></p>
-          <p class="caveat" id="psyche-note"></p>
+          <p class="eyebrow rev">04 — The test</p>
+          <h2 class="h2 rev rev-1"><span class="h2__a">Can you spot</span><span class="h2__b">the PON?</span></h2>
+          <p class="body rev rev-2">Five rounds against real lookalike breeds. They get harder.</p>
+          <div id="game-root" class="rev rev-2"></div>
         </div>
       </section>
 
-      <!-- ==================== 05 WHAT THE FEE DOES ==================== -->
-      <section class="beat beat--light" id="fee">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">07</span> What the fee does</h2>
-          <p class="statement statement--sm" id="fee-headline"></p>
-          <p class="body body--wide" id="fee-body"></p>
-          <p class="flag" id="fee-note"></p>
-        </div>
-      </section>
-
-      <!-- ==================== 06 STATUS ==================== -->
-      <section class="beat beat--night" id="status-beat">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">08</span> What is and is not true yet</h2>
-          <p class="pull pull--sm">
-            Most projects like this show you only the finished parts.
-            <em>Here is the whole list.</em>
-          </p>
-          <ul class="status" id="status"></ul>
-
-          <h3 class="sub-head">Figures deliberately not shown</h3>
-          <ul class="withheld" id="withheld"></ul>
-        </div>
-      </section>
-
-      <!-- ==================== 07 HOW TO BUY ==================== -->
-      <section class="beat beat--light" id="buy">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">09</span> How to get $PON</h2>
-          <p class="statement" id="buy-lead"></p>
-          <p class="body body--wide" id="buy-intro"></p>
-
-          <h3 class="sub-head">Step one — get funds onto Robinhood Chain</h3>
-          <p class="disclosure" id="referral-disclosure"></p>
-          <div class="venues" id="venues"></div>
-
-          <div class="diy" id="diy"></div>
-
-          <h3 class="sub-head" id="buy-final-head">Step two</h3>
-          <ol class="steps" id="steps"></ol>
-
-          <div class="ca">
-            <span class="field-label">Contract address</span>
-            <div class="ca__row">
-              <code class="ca__addr" id="ca-addr"></code>
-              <button class="btn btn--dark" type="button" id="copy-ca">
-                <span id="copy-ca-text">Copy</span>
-              </button>
+      <!-- ==================== PIPA ==================== -->
+      <section class="sec">
+        <div class="wrap split">
+          <figure class="media rev media--tall">
+            <img src="img/pipa-logo.png" alt="PON International Preservation Alliance logo." loading="lazy" />
+          </figure>
+          <div>
+            <p class="eyebrow rev">05 — Where it goes</p>
+            <h2 class="h2 rev rev-1"><span class="h2__a">A real charity is</span><span class="h2__b">fixing the DNA.</span></h2>
+            <p class="body rev rev-2">
+              The <strong>PON International Preservation Alliance</strong> maps PON DNA
+              with the Orthopedic Foundation for Animals, so breeders can widen the gene
+              pool instead of narrowing it. Registered 501(c)(3), EIN 39-3160948.
+            </p>
+            <div class="hero__cta rev rev-3">
+              <a class="btn btn--go" id="donate" href="#" target="_blank" rel="noopener noreferrer">Donate to PIPA</a>
+              <a class="btn btn--ghost" id="pipa-site" href="#" target="_blank" rel="noopener noreferrer">ponipa.org</a>
             </div>
+            <p class="tiny">
+              Logo used with the alliance's knowledge while they review this page.
+              PIPA is a separate organisation and has not endorsed $PONCOIN.
+            </p>
           </div>
-
-          <div class="buy-cta">
-            <a class="btn btn--buy btn--lg" id="main-buy" href="#" target="_blank" rel="noopener noreferrer">
-              Buy $PON on Pons
-            </a>
-            <a class="btn btn--outline btn--lg" id="ca-link" href="#" target="_blank" rel="noopener noreferrer">
-              View on Blockscout
-            </a>
-          </div>
-
-          <p class="flag" id="buy-later"></p>
-
-          <dl class="chain" id="chain"></dl>
-          <p class="source">
-            Read live from Blockscout when this page loaded. Not typed in by hand.
-          </p>
         </div>
       </section>
 
-      <!-- ==================== 08 LEDGER ==================== -->
-      <section class="beat beat--night beat--tight" id="ledger-beat">
+      <!-- ==================== RECEIPTS ==================== -->
+      <section class="sec">
         <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">10</span> Donation ledger</h2>
-          <div id="ledger"></div>
+          <p class="eyebrow rev">06 — The receipts</p>
+          <h2 class="h2 rev rev-1"><span class="h2__a">Every donation,</span><span class="h2__b">photographed.</span></h2>
+          <p class="body rev rev-2">No promises and no percentages. It counts when there is a receipt you can open.</p>
+          <div id="ledger" class="rev rev-2"></div>
         </div>
       </section>
 
-      <!-- ==================== 09 THE DOG ==================== -->
-      <section class="beat beat--light beat--tight" id="dog">
-        <div class="wrap">
-          <h2 class="eyebrow"><span class="eyebrow__no">11</span> The dog</h2>
-        </div>
-        <div class="strip" id="plates"></div>
-      </section>
     </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="foot">
       <div class="wrap">
-        <div class="foot__grid">
-          <div>
-            <h2 class="eyebrow eyebrow--foot">Breed record</h2>
-            <dl class="registry" id="registry"></dl>
-          </div>
-
-          <dl class="stamp">
-            <div class="stamp__row"><dt>Record no.</dt><dd>None issued</dd></div>
-            <div class="stamp__row"><dt>Authority</dt><dd>None</dd></div>
-            <div class="stamp__row"><dt>Status</dt><dd class="stamp__flag">Unverified</dd></div>
-          </dl>
+        <h2 class="h2 rev rev-1"><span class="h2__a">Somebody went looking once.</span><span class="h2__b">It worked.</span></h2>
+        <div class="hero__cta">
+          <a class="btn btn--go" id="foot-buy" href="#" target="_blank" rel="noopener noreferrer">Buy $PONCOIN</a>
+          <a class="btn btn--ghost" id="foot-scan" href="#" target="_blank" rel="noopener noreferrer">Verify contract</a>
         </div>
-
-        <p class="foot__disclaimer" id="disclaimer"></p>
-        <p class="foot__meta">
-          This page borrows the layout of a pedigree document. It is not one, and
-          it was issued by nobody. Breed photographs are used under their
-          Creative Commons licences and credited where they appear.
+        <p class="tiny" id="foot-ca"></p>
+        <p class="tiny"><a id="foot-x" href="#" target="_blank" rel="noopener noreferrer">@PoncoinHood on X</a></p>
+        <p class="tiny">
+          Breed photographs from Wikimedia Commons under Creative Commons licences.
+          Not financial advice.
         </p>
       </div>
     </footer>
 
     <script src="data.js"></script>
     <script src="game-data.js"></script>
-    <script src="app.js"></script>
+    <script src="shell.js"></script>
     <script src="game.js"></script>
   </body>
 </html>
